@@ -8,7 +8,7 @@ int maxarr(int arr[], int low, int high){
   }
   int mid=low+(high-low)/2;
   int l=maxarr( arr, low, mid);
-  int r=max(arr, mid+1, high);
+  int r=maxarr(arr, mid+1, high);
   int c=crossmax(arr, low, mid, high);
   return max(l,c,r);
 }

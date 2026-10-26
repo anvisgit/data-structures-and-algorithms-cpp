@@ -37,7 +37,6 @@ Node* buildtree(char ch[], int fre[], int n){
         Node* parent = new Node('$', a->freq + b->freq);
         parent->left = a;
         parent->right = b;
-
         pq.push(parent);
     }
 
@@ -50,8 +49,7 @@ void gencode(Node* root, string code){
     }
 
     if(root->left == NULL && root->right == NULL){
-        cout << root->ch << " : "
-             << (code.empty() ? "0" : code) << endl;
+        cout << root->ch << " : "<< (code.empty() ? "0" : code) << endl;
         return;
     }
 
@@ -62,16 +60,13 @@ void gencode(Node* root, string code){
 int main(){
     int n;
     cin >> n;
-
     char ch[n];
     int fre[n];
 
     for(int i = 0; i < n; i++){
         cin >> ch[i] >> fre[i];
     }
-
     Node* root = buildtree(ch, fre, n);
     gencode(root, "");
-
     return 0;
 }
